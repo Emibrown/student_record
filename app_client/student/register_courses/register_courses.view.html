@@ -1,0 +1,44 @@
+<div studpageheader></div>
+<studmenu ></studmenu><br>
+<div class="container">
+  <div class="row">
+  		<div class="col-md-12">
+				<h6>REGISTER COURSES</h6>
+				<hr>
+				<h6>Current session: {{settings.sessionTitle}} | Semister: {{settings.currentSemister}} </h6>
+				<hr>
+			</div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+			<div class="table-responsive-md">
+				<table class="table click table-hover">
+					<thead>
+						<tr>
+							<th>Course</th>
+							<th>Code</th>
+							<th>Credit Load</th>
+							<th>Level</th>
+						</tr>
+					</thead>
+					<tbody>
+					 <tr ng-repeat ="course in registerCourses " ng-show="showme(course._id)">
+							<td>{{course.title}}</td>
+							<td>{{course.code}}</td>
+							<td>{{course.creditLoad}}</td>
+							<td>{{course.level}}</td>
+							<td>
+								<a href="" ng-show="courseCheck(course._id) == false" ng-click="register(course._id)" class="btn btn-sm btn-primary">Register</a>
+								<a href="" ng-show="courseCheck(course._id) == true" ng-click="unregister(course._id)" class="btn btn-sm btn-success">Unregister</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--end of .table-responsive-->
+		</div>
+  </div>
+</div> 
+
+

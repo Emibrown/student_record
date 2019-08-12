@@ -1,0 +1,65 @@
+<h5>Create New Admin</h5>
+<br>
+
+<form name="adminForm" ng-submit="create(adminForm.$valid)" required novalidate>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">First Name</label>
+      <input type="text" class="form-control form-control-sm" ng-model="admin.firstName" name="firstname" required>
+      <small class="text-danger" ng-show="adminForm.firstname.$invalid && !adminForm.firstname.$pristine" >Required.</small>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Last Name</label>
+      <input type="text" class="form-control form-control-sm" ng-model="admin.lastName" name="lastname" required>
+      <small class="text-danger" ng-show="adminForm.lastname.$invalid && !adminForm.lastname.$pristine" >Required.</small>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Other Name</label>
+      <input type="text" class="form-control form-control-sm" ng-model="admin.otherName" name="othername" required>
+      <small class="text-danger" ng-show="adminForm.othername.$invalid && !adminForm.othername.$pristine" >Required.</small>
+    </div>
+
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control form-control-sm" name="email" ng-model="admin.email" required >
+      <small class="text-danger" ng-show="adminForm.email.$invalid && !adminForm.email.$pristine">Enter a valid email address!</small>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Phone Number</label>
+      <input type="text" class="form-control form-control-sm" ng-model="admin.phoneNumber" ng-pattern="/[7-9][0-9]{9}$/" name="phoneNumber" required>
+      <small class="text-danger" ng-show="adminForm.phoneNumber.$error.required && !adminForm.phoneNumber.$pristine" >Pequired!</small>
+      <small class="text-danger" ng-show="adminForm.phoneNumber.$error.pattern" >Invalid phone number!</small>
+    </div>
+
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Password</label>
+      <input type="password" class="form-control form-control-sm" name="password1" ng-minlength="8"  ng-model="admin.new" required/>
+      <small class="text-danger" ng-show="adminForm.password1.$error.required && !adminForm.password1.$pristine" >Required.</small>
+      <small class="text-danger"  ng-show="adminForm.password1.$error.minlength" >8 characters or more.</small>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Repeat  Password</label>
+      <input type="password" class="form-control form-control-sm" name="password2"  ng-pattern="admin.new"  ng-model="admin.repeat" required/>
+      <small class="text-danger" ng-show="adminForm.password2.$error.pattern" >Password miss-match!</small>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">{{btn}}</button>
+</form>
+
+
+
+   

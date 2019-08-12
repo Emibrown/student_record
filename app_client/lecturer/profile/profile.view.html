@@ -1,0 +1,130 @@
+<div lecpageheader></div>
+<div lecmenu ></div>
+<br>
+<div class="container">
+		<div class="row">
+				<div class="col-md-12">
+					<h4>PROFILE</h4>
+					STAFF ID: {{lecturer.staffID}}
+					<hr>
+					<form name="studentForm" ng-submit="add(studentForm.$valid)" required novalidate>
+	
+							<div class="form-row">
+								<div class="form-group col-md-3">
+										<label for="inputEmail4">Title</label>
+										<input type="text" class="form-control form-control-sm" ng-model="lecturer.title" name="title" required disabled>
+										<small class="text-danger" ng-show="studentForm.surname.$invalid && !studentForm.lastname.$pristine" >Required.</small>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="inputEmail4">Last Name</label>
+									<input type="text" class="form-control form-control-sm" ng-model="lecturer.lastname" name="lastname" required disabled>
+									<small class="text-danger" ng-show="studentForm.surname.$invalid && !studentForm.lastname.$pristine" >Required.</small>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="inputPassword4">First Name</label>
+									<input type="text" class="form-control form-control-sm" ng-model="lecturer.firstname" name="firstname" required disabled>
+									<small class="text-danger" ng-show="studentForm.firstname.$invalid && !studentForm.firstname.$pristine" >Required.</small>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="inputPassword4">Other Name</label>
+									<input type="text" class="form-control form-control-sm" ng-model="lecturer.othername" name="othername" required disabled>
+									<small class="text-danger" ng-show="studentForm.othername.$invalid && !studentForm.othername.$pristine" >Required.</small>
+								</div>
+							</div>
+						
+							<div class="form-row">
+									<div class="form-group col-md-4">
+											<label for="inputState">Gender</label>
+											<input type="text" class="form-control form-control-sm" ng-model="lecturer.gender" name="gender" required disabled>
+											<small class="text-danger" ng-show="studentForm.gender.$invalid && !studentForm.gender.$pristine" >Required.</small>
+										</div>
+								<div class="form-group col-md-4">
+									<label for="inputState">State Of Origin</label>
+									<input type="text" class="form-control form-control-sm" ng-model="lecturer.stateOfOrigin" name="stateOfOrigin" required disabled>
+									<small class="text-danger" ng-show="studentForm.stateOfOrigin.$invalid && !studentForm.stateOfOrigin.$pristine" >Required.</small>
+								</div>
+								<div class="form-group col-md-4">
+										<label for="inputEmail4">LGA</label>
+										<input type="text" class="form-control form-control-sm" ng-model="lecturer.lga" name="lga" required disabled>
+										<small class="text-danger" ng-show="studentForm.lga.$invalid && !studentForm.lga.$pristine" >Required.</small>
+									</div>
+							</div>
+						
+							<div class="form-row">
+									<div class="form-group col-md-4">
+											<label for="inputEmail4">Address</label>
+											<input type="text" class="form-control form-control-sm" ng-model="lecturer.address" name="address" required disabled>
+											<small class="text-danger" ng-show="studentForm.address.$invalid && !studentForm.address.$pristine" >Required.</small>
+										</div>
+								<div class="form-group col-md-4">
+									<label for="inputPassword4">Phone Number</label>
+									<input type="text" class="form-control form-control-sm" ng-model="lecturer.phoneNumber" name="phoneNumber" required disabled>
+									<small class="text-danger" ng-show="studentForm.phoneNumber.$invalid && !studentForm.phoneNumber.$pristine" >Required.</small>
+								</div>
+								<div class="form-group col-md-4">
+									<label for="inputPassword4">Email Address</label>
+									<input type="email" class="form-control form-control-sm" ng-model="lecturer.email" name="email" required disabled>
+									<small class="text-danger" ng-show="studentForm.email.$invalid && !studentForm.email.$pristine" >Required.</small>
+								</div>
+							</div>
+						
+							<div class="form-row">
+									<div class="form-group col-md-4">
+											<label for="inputEmail4">Staff ID</label>
+											<input type="text" class="form-control form-control-sm" ng-model="lecturer.staffID" name="staffID" required disabled>
+											<small class="text-danger" ng-show="studentForm.regNo.$invalid && !studentForm.regNo.$pristine" >Required.
+											</small>
+										</div>
+								<div class="form-group col-md-4">
+										<label for="inputEmail4">Faculty</label>
+										<input type="text" class="form-control form-control-sm" ng-model="lecturer.faculty" name="faculty" required disabled>
+										<small class="text-danger" ng-show="studentForm.faculty.$invalid && !studentForm.faculty.$pristine" >Required.</small>
+									</div>
+									<div class="form-group col-md-4">
+										<label for="inputPassword4">Department</label>
+										<input type="text" class="form-control form-control-sm" ng-model="lecturer.department" name="department" required disabled>
+										<small class="text-danger" ng-show="studentForm.department.$invalid && !studentForm.department.$pristine" >Required.</small>
+									</div>
+							</div>
+						</form>
+				</div>
+		</div>
+	</div>
+	
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+					<h4>Change Password</h4>
+					<hr>
+						<form name="passwordForm" ng-submit="change(passwordForm.$valid)" required novalidate>
+				
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label for="inputEmail4">Old Password</label>
+								<input type="password" class="form-control" name="password" ng-minlength="8"  ng-model="password.old" required/>
+									<small class="text-danger" ng-show="passwordForm.password.$error.required && !passwordForm.password.$pristine" >Your password is required.</small>
+									<small class="text-danger"  ng-show="passwordForm.password.$error.minlength" >8 characters or more.</small>
+							</div>
+				
+							<div class="form-group col-md-4">
+								<label for="inputEmail4">New Password</label>
+								<input class="form-control" type="password" name="password1" ng-minlength="8"  ng-model="password.new" required/>
+									<small class="text-danger" ng-show="passwordForm.password1.$error.required && !passwordForm.password1.$pristine" >Your new password is required.</small>
+									<small class="text-danger"  ng-show="passwordForm.password1.$error.minlength" >8 characters or more.</small>
+							</div>
+				
+							<div class="form-group col-md-4">
+								<label for="inputEmail4">Repeat new password</label>
+								<input class="form-control" type="password" name="password2"  ng-pattern="password.new"  ng-model="password.repeat" required/>
+									<small class="text-danger" ng-if="passwordForm.password2.$error.pattern" >Password miss-match!</small>
+							</div>
+				
+						</div>
+						<button type="submit" class="btn btn-primary">{{passBtn}}</button>
+					</form>
+			</div>
+		</div>
+	</div> 
+	
+	<br>

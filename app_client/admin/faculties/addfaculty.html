@@ -1,0 +1,31 @@
+<h5>Create new Faculty</h5>
+<br>
+
+<!--
+<form name="topicForm" ng-submit="add(topicForm.$valid)" required novalidate>
+
+    <div class="form-group ">
+       <input ng-click="clear()" name="title" class="form-control form-control-sm" ng-model="topic.title" placeholder="Topic" type="text" required>
+       <small class="text-danger" ng-show="submitted && topicForm.title.$error.required">Required.</small>
+    </div>
+    <hr>        
+    <div class="form-group">
+      <a href="" ng-click="add(topicForm.$valid)" class="btn  btn-primary">{{btn}}</a>
+    </div>
+</form>
+-->
+<form name="facultyForm" ng-submit="add(facultyForm.$valid)" required novalidate>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Faculty Name</label>
+       <input type="text" class="form-control form-control-sm" ng-model="faculty.name" name="name" required>
+       <small class="text-danger" ng-show="facultyForm.name.$invalid && !facultyForm.name.$pristine" >Required.</small>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">{{btn}}</button>
+</form>
+
+
+
+   

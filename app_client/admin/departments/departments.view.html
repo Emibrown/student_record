@@ -1,0 +1,46 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h6>All Departments</h6>
+  		</div>
+	    <div class="col-md-10">
+	    	<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="Search departments record" ng-model="alldepartment">
+			</div>
+	    </div>
+	    <div class="col-md-2">
+	    	<button class="btn btn-primary" ng-click="add()">Add Department</button> 
+	    </div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    	<div class="table-responsive-md">
+	        <table class="table click table-hover">
+	          <thead>
+	            <tr>
+	              <th>Name</th>
+	              <th>Faculty</th>
+	              <th>Duration</th>            
+	              <th>Created on</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	          	<tr ng-repeat ="department in alldepartments | filter
+: alldepartment">
+	          		<td>{{department.name}}</td>
+	          		<td>{{department.faculty.name}}</td>
+	          		<td>{{department.duration}}</td>
+	          		<td>{{department.createdOn | date :  "mediumDate"}}</td>
+	          	</tr>
+	           
+	          </tbody>
+	        </table>
+	      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div> 

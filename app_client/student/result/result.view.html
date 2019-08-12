@@ -1,0 +1,49 @@
+<div studpageheader></div>
+<studmenu ></studmenu><br>
+<div class="container">
+  <div class="row">
+  		<div class="col-md-12">
+				<h6>RESULT</h6>
+				<hr>
+  		</div>
+	</div>
+</div>
+<div class="container">
+  <div class="row" ng-repeat ="result in results">
+		<div class="col-md-12">
+			<h6><strong>LEVEL:</strong> {{result.level}} | <strong>SEMISTER:</strong> {{result.semister}}</h6>
+		</div>
+    <div class="col-md-12">
+			<div class="table-responsive-md">
+				<table class="table click table-hover">
+					<thead>
+						<tr>
+							<th>Course code</th>
+							<th>Assessment</th>
+							<th>Exam</th>
+							<th>Total</th>
+							<th>Grade</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+					 <tr ng-repeat ="course in result.courses ">
+							<td>{{course.courseID.code}}</td>
+							<td  class="text-info">{{course.assessment || 'Null'}}</td>
+							<td class="text-info">{{course.exam || 'Null'}}</td>
+							<td class="{{ total(course.assessment,course.exam) }}">{{ (course.assessment + course.exam) || 'Null' }}</td>
+							<td>
+								<h6><span class=" badge {{gradeColor(course.assessment,course.exam)}}">{{grade(course.assessment,course.exam)}}</span></h6>
+							</td>
+							<td>
+									<h6><span class="badge {{status(course.status)}}" ng-class="">{{ course.status}}</span></h6>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--end of .table-responsive-->
+			<br>
+			<hr>
+		</div>
+  </div>
+</div> 

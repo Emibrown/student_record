@@ -1,0 +1,47 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h6>Administrators</h6>
+  		</div>
+	    <div class="col-md-10">
+	      <form ng-submit="searchAdmin(search)" >
+	    	<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="Search Administrators Record" ng-model="admins">
+			</div>
+		  </form>
+	    </div>
+	    <div class="col-md-2">
+	    	<button class="btn btn-primary" ng-click="add()">Add Administrator</button> 
+	    </div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    	<div class="table-responsive-md">
+	        <table class="table click table-hover">
+	          <thead>
+	            <tr>
+	              <th>Full Name</th>
+	              <th>Email Address</th>
+	              <th>Phone Number</th>
+	              <th>Created On</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	          	<tr ng-repeat ="admin in allAdmin | filter
+: admins">
+	          		<td>{{admin.firstName}} {{admin.lastName}} {{admin.otherName}}</td>
+	          		<td>{{admin.email}}</td>
+	          		<td>{{admin.phoneNumber}}</td>
+	          		<td>{{admin.createdAt | date :  "mediumDate"}}</td>
+	          	</tr>
+	          </tbody>
+	        </table>
+	      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div> 

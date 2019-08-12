@@ -1,0 +1,48 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h6>All Students</h6>
+  		</div>
+	    <div class="col-md-10">
+	    	<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="Search student record" ng-model="allstudent">
+			</div>
+	    </div>
+	    <div class="col-md-2">
+	    	<button class="btn btn-primary" ng-click="add()">Add Student</button> 
+	    </div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    	<div class="table-responsive-md">
+	        <table  class="table click table-hover">
+	          <thead>
+	            <tr>
+	              <th>Matric Number</th>
+	              <th>Full Name</th>
+	              <th>Department</th>
+	              <th>Level</th>
+	              <th>Year Of Admission</th>
+	            </tr>
+	          </thead>
+	           <tbody>
+	          	<tr ng-click="show(student._id)" ng-repeat ="student in allstudents | filter
+: allstudent">
+	          		<td>{{student.regNo}}</td>
+	          		<td>{{student.fullname}}</td>
+	          		<td>{{student.department.name}}</td>
+	          		<td>{{student.level}}</td>
+	        		<td>{{student.yearOfAdmission}}</td>
+	          	</tr>
+	           
+	          </tbody>
+	        </table>
+	      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div> 

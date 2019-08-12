@@ -1,0 +1,46 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h6>All Lecturers</h6>
+  		</div>
+	    <div class="col-md-10">
+	    	<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="Search lecturer record" ng-model="alllecturer">
+			</div>
+	    </div>
+	    <div class="col-md-2">
+	    	<button class="btn btn-primary" ng-click="add()">Add Lecturers</button> 
+	    </div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    	<div class="table-responsive-md">
+	        <table  class="table click table-hover">
+	          <thead>
+	            <tr>
+	              <th>Name</th>
+	              <th>Staff ID</th>
+	              <th>Department</th>
+	              <th>Phone Number</th>
+	            </tr>
+	          </thead>
+	           <tbody>
+	          	<tr ng-click="show(lecturer._id)" ng-repeat ="lecturer in alllecturers | filter
+: alllecturer">
+	          		<td>{{lecturer.fullname}}</td>
+	          		<td>{{lecturer.staffID}}</td>
+	          		<td>{{lecturer.department.name}}</td>
+	          		<td>{{lecturer.phoneNumber}}</td>
+	          	</tr>
+	           
+	          </tbody>
+	        </table>
+	      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,49 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h6>All Courses</h6>
+  		</div>
+	    <div class="col-md-10">
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Search courses record" ng-model="allcourse">
+				</div>
+	    </div>
+	    <div class="col-md-2">
+	    	<button class="btn btn-primary" ng-click="add()">Add Course</button> 
+	    </div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    	<div class="table-responsive-md">
+	        <table class="table click table-hover">
+	          <thead>
+	            <tr>
+	              <th>Title</th>
+	              <th>Code</th>
+	              <th>Department</th>
+	              <th>Credit Load</th>
+	              <th>Semister</th>
+	              <th>Level</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	           <tr ng-click="show(course._id)" ng-repeat ="course in allcourses | filter
+: allcourse">
+	          		<td>{{course.title}}</td>
+	          		<td>{{course.code}}</td>
+	          		<td>{{course.department.name}}</td>
+	          		<td>{{course.creditLoad}}</td>
+	        		<td>{{course.semister}}</td>
+	        		<td>{{course.level}}</td>
+	          	</tr>
+	          </tbody>
+	        </table>
+	      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div> 

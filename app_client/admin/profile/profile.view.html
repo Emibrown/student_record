@@ -1,0 +1,76 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+	<h4>Edit Profile</h4>
+	{{admin}}
+	<hr>
+
+
+	
+
+	<form name="profileForm" ng-submit="edit(profileForm.$valid)" required novalidate>
+
+	  <div class="form-row">
+	    <div class="form-group col-md-4">
+	      <label for="">First Name</label>
+	      <input type="text" ng-model="profile.firstName" class="form-control" name="firstname" required>
+	        <small class="text-danger" ng-show="profileForm.firstname.$invalid && !profileForm.firstname.$pristine" >Your first name is required.</small>
+	    </div>
+	    <div class="form-group col-md-4">
+	      <label for="inputEmail4">Last Name</label>
+	      <input type="text" ng-model="profile.lastName" class="form-control" name="lastname" required>
+	       <small class="text-danger" ng-show="profileForm.lastname.$invalid && !profileForm.lastname.$pristine" >Your last name is required.</small>
+	    </div>
+	    <div class="form-group col-md-4">
+	      <label for="inputEmail4">Other Name</label>
+	      <input type="text" ng-model="profile.otherName" class="form-control" name="othername" required>
+	       <small class="text-danger" ng-show="profileForm.othername.$invalid && !profileForm.othername.$pristine" >Your Other name is required.</small>
+	    </div>
+	  </div>
+	  <div class="form-row">
+	    <div class="form-group col-md-6">
+	      <label for="inputEmail4">Email</label>
+	      <input type="email" ng-model="profile.email" disabled  class="form-control" name="email" required>
+	    </div>
+	    <div class="form-group col-md-6">
+	      <label for="inputEmail4">Phone Number</label>
+	      <input type="text"ng-model="profile.phoneNumber" class="form-control" ng-pattern="/[7-9][0-9]{9}$/" name="phoneNumber" required>
+	       <small class="text-danger" ng-show="profileForm.phoneNumber.$error.required && !profileForm.phoneNumber.$pristine" >Phone number is required!</small>
+           <small class="text-danger" ng-show="profileForm.phoneNumber.$error.pattern" >Enter a valid phone number!</small>
+	    </div>
+	  </div>
+	  <button type="submit" class="btn btn-primary">{{btn}}</button>
+	</form>
+
+	<br>
+	<h4>Change Password</h4>
+	<hr>
+    <form name="passwordForm" ng-submit="change(passwordForm.$valid)" required novalidate>
+
+	  <div class="form-row">
+	    <div class="form-group col-md-4">
+	      <label for="inputEmail4">Old Password</label>
+	      <input type="password" class="form-control" name="password" ng-minlength="8"  ng-model="password.old" required/>
+          <small class="text-danger" ng-show="passwordForm.password.$error.required && !passwordForm.password.$pristine" >Your password is required.</small>
+          <small class="text-danger"  ng-show="passwordForm.password.$error.minlength" >8 characters or more.</small>
+	    </div>
+
+	    <div class="form-group col-md-4">
+	      <label for="inputEmail4">New Password</label>
+	      <input class="form-control" type="password" name="password1" ng-minlength="8"  ng-model="password.new" required/>
+          <small class="text-danger" ng-show="passwordForm.password1.$error.required && !passwordForm.password1.$pristine" >Your new password is required.</small>
+          <small class="text-danger"  ng-show="passwordForm.password1.$error.minlength" >8 characters or more.</small>
+	    </div>
+
+	    <div class="form-group col-md-4">
+	      <label for="inputEmail4">Repeat new password</label>
+	      <input class="form-control" type="password" name="password2"  ng-pattern="password.new"  ng-model="password.repeat" required/>
+          <small class="text-danger" ng-if="passwordForm.password2.$error.pattern" >Password miss-match!</small>
+	    </div>
+
+	  </div>
+	  <button type="submit" class="btn btn-primary">{{passBtn}}</button>
+	</form>
+</div>
+

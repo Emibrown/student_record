@@ -1,0 +1,97 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+	<div class="row">
+			<div class="col-md-8">
+					<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h5>All Session</h5>
+									<br>
+								</div>
+						
+								<div class="col-md-8">
+									<div class="input-group mb-3">
+									<input type="text" class="form-control" placeholder="Search session record" ng-model="allsession">
+								</div>
+								</div>
+								<div class="col-md-4">
+									<button class="btn btn-primary" ng-click="add()">Start new session</button> 
+								</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="table-responsive-md">
+										<table class="table click table-hover">
+											<thead>
+												<tr>
+													<th>Session</th>
+													<th>Start</th>            
+													<th>End</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr ng-repeat ="session in allsessions | filter
+					: allsession">
+													<td>{{session.title}}</td>
+													<td>{{session.startDate | date :  "mediumDate"}}</td>
+													<td>{{session.endDate | date :  "mediumDate"}}</td>
+												</tr>
+											 
+											</tbody>
+										</table>
+									</div><!--end of .table-responsive-->
+							</div>
+						</div>
+					</div> 
+			</div>
+			<div class="col-md-4">
+
+					<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h5>Session Settings</h5>
+									<br>
+								</div>
+							</div>
+
+							<div>
+									<div class="col-md-12">
+											<form name="settingsForm" ng-submit="saveSettings(settingsForm.$valid)" required novalidate>
+
+													<div class="form-row">
+															<div class="form-group col-md-12">
+																<label for="inputEmail4">Current Session</label>
+																<select id="inputState" class="form-control form-control-sm" name="currentsession" ng-model="settings.currentSession" disabled required>
+																	<option value="" selected>Choose...</option>
+																	<option ng-repeat="session in allsessions" value="{{session._id}}">{{session.title}}</option>
+																</select>
+																<small class="text-danger" ng-show="settingsForm.currentsession.$invalid && !settingsForm.currentsession.$pristine" >Required.</small>
+															</div>
+														</div>
+												
+													<div class="form-row">
+														<div class="form-group col-md-12">
+															<label for="inputEmail4">Current Semister</label>
+															<select id="inputState" class="form-control form-control-sm" name="currentSemister" ng-model="settings.currentSemister" required>
+																<option value="" selected>Choose...</option>
+																<option value="First">First</option>
+																<option value="Second">Second</option>
+															</select>
+															<small class="text-danger" ng-show="settingsForm.currentSemister.$invalid && !settingsForm.currentSemister.$pristine" >Required.</small>
+														</div>
+													</div>
+
+													<button type="submit" class="btn btn-primary">{{sessionbtn}}</button>
+												</form>
+									</div>
+							</div>
+
+					</div>
+
+			</div>
+	</div>
+</div>

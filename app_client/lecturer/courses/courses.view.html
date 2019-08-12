@@ -1,0 +1,41 @@
+<div lecpageheader></div>
+<div lecmenu ></div>
+<br>
+<div class="container">
+  <div class="row">
+  		<div class="col-md-12">
+				<h6>COURSES</h6>
+				<hr>
+  		</div>
+	</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+			<div class="table-responsive-md">
+				<table class="table click table-hover">
+					<thead>
+						<tr>
+							<th>Course</th>
+							<th>Code</th>
+							<th>Credit Load</th>
+							<th>Level</th>
+						</tr>
+					</thead>
+					<tbody>
+					 <tr  ng-repeat ="course in courses ">
+							<td>{{course.title}}</td>
+							<td>{{course.code}}</td>
+							<td>{{course.creditLoad}}</td>
+							<td>{{course.level}}</td>
+							<td>
+								<a href="" ng-click="show(course._id)" class="btn btn-sm btn-primary">View Students</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--end of .table-responsive-->
+		</div>
+  </div>
+</div> 

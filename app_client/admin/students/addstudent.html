@@ -1,0 +1,195 @@
+<h5>Add Student</h5>
+<br>
+
+<!--
+<form name="topicForm" ng-submit="add(topicForm.$valid)" required novalidate>
+
+    <div class="form-group ">
+       <input ng-click="clear()" name="title" class="form-control form-control-sm" ng-model="topic.title" placeholder="Topic" type="text" required>
+       <small class="text-danger" ng-show="submitted && topicForm.title.$error.required">Required.</small>
+    </div>
+    <hr>        
+    <div class="form-group">
+      <a href="" ng-click="add(topicForm.$valid)" class="btn  btn-primary">{{btn}}</a>
+    </div>
+</form>
+-->
+<div class="dialog">
+<form name="studentForm" ng-submit="add(studentForm.$valid)" required novalidate>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Surname</label>
+      <input type="text" class="form-control form-control-sm" ng-model="student.surname" name="surname" required>
+      <small class="text-danger" ng-show="studentForm.surname.$invalid && !studentForm.surname.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">First Name</label>
+      <input type="text" class="form-control form-control-sm" ng-model="student.firstname" name="firstname" required>
+      <small class="text-danger" ng-show="studentForm.firstname.$invalid && !studentForm.firstname.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">Other Name</label>
+      <input type="text" class="form-control form-control-sm" ng-model="student.othername" name="othername" required>
+      <small class="text-danger" ng-show="studentForm.othername.$invalid && !studentForm.othername.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputState">Gender</label>
+      <select id="inputState" class="form-control form-control-sm" ng-model="student.gender" name="gender" required>
+        <option value="" selected>Choose...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      <small class="text-danger" ng-show="studentForm.gender.$invalid && !studentForm.gender.$pristine" >Required.</small>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Date Of Birth</label>
+      <input type="Date" class="form-control form-control-sm" ng-model="student.dateOfBirth" name="dateOfBirth" required>
+      <small class="text-danger" ng-show="studentForm.dateOfBirth.$invalid && !studentForm.dateOfBirth.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State Of Origin</label>
+      <select id="inputState" class="form-control form-control-sm" ng-model="student.stateOfOrigin" name="stateOfOrigin" required>
+        <option value="" selected>Choose...</option>
+        <option value="Abia" >Abia</option>
+        <option value="Abuja">Abuja</option>
+        <option value="Adamawa">Adamawa</option>
+        <option value="Akwa Ibom"  >Akwa Ibom</option>
+        <option value="Anambra">Anambra</option>
+        <option value="Bauchi">Bauchi</option>
+        <option value="Bayelsa" >Bayelsa</option>
+        <option value="Benin" >Benin</option>
+        <option value="Benue" >Benue</option>
+        <option value="Borno" >Borno</option>
+        <option value="Cross River">Cross River</option>
+        <option value="Delta">Delta</option>
+        <option value="Ebonyi" >Ebonyi</option>
+        <option value="Edo">Edo</option>
+        <option value="Ekiti" >Ekiti</option>
+        <option value="Enugu" >Enugu</option>
+        <option value="Gombe" >Gombe</option>
+        <option value="Ibadan" >Ibadan</option>
+        <option value="Imo">Imo</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Kaduna"   >Kaduna</option>
+        <option value="Kano" >Kano</option>
+        <option value="Katsina" >Katsina</option>
+        <option value="Kebbi" >Kebbi</option>
+        <option value="Kogi" >Kogi</option>
+        <option value="Kwara" >Kwara</option>
+        <option value="Lagos"  >Lagos</option>
+        <option value="Nasarawa" >Nasarawa</option>
+        <option value="Nationwide" >Nationwide</option>
+        <option value="65"  class="65" >Niger</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Ogun"  >Ogun</option>
+        <option value="Ondo" >Ondo</option>
+        <option value="Osun" >Osun</option>
+        <option value="Oyo" >Oyo</option>
+        <option value="Plateau" >Plateau</option>
+        <option value="Port Harcourt" >Port Harcourt</option>
+        <option value="Rivers" >Rivers</option>
+        <option value="Sokoto"  >Sokoto</option>
+        <option value="Taraba" >Taraba</option>
+        <option value="Uyo" >Uyo</option>
+        <option value="warri" >warri</option>
+        <option value="Yobe" >Yobe</option>
+        <option value="Zamfara" >Zamfara</option>
+      </select>
+      <small class="text-danger" ng-show="studentForm.stateOfOrigin.$invalid && !studentForm.stateOfOrigin.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputEmail4">LGA</label>
+        <input type="text" class="form-control form-control-sm" ng-model="student.lga" name="lga" required>
+        <small class="text-danger" ng-show="studentForm.lga.$invalid && !studentForm.lga.$pristine" >Required.</small>
+      </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Address</label>
+      <input type="text" class="form-control form-control-sm" ng-model="student.address" name="address" required>
+      <small class="text-danger" ng-show="studentForm.address.$invalid && !studentForm.address.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Phone Number</label>
+      <input type="number" class="form-control form-control-sm" ng-model="student.phoneNumber" name="phoneNumber" required>
+      <small class="text-danger" ng-show="studentForm.phoneNumber.$invalid && !studentForm.phoneNumber.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Email Address</label>
+      <input type="email" class="form-control form-control-sm" ng-model="student.email" name="email" required>
+      <small class="text-danger" ng-show="studentForm.email.$invalid && !studentForm.email.$pristine" >Required.</small>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Matric Number</label>
+      <input type="text" class="form-control form-control-sm" ng-model="student.regNo" name="regNo" required>
+      <small class="text-danger" ng-show="studentForm.regNo.$invalid && !studentForm.regNo.$pristine" >Required.
+      </small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Year Of Admission</label>
+      <input type="number" class="form-control form-control-sm" ng-model="student.yearOfAdmission" name="yearOfAdmission" required>
+      <small class="text-danger" ng-show="studentForm.yearOfAdmission.$invalid && !studentForm.yearOfAdmission.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Level</label>
+      <select id="inputState" class="form-control form-control-sm" ng-model="student.level" name="level" required>
+        <option value="" selected>Choose...</option>
+        <option>100</option>
+        <option>200</option>
+        <option>300</option>
+        <option>400</option>
+        <option>500</option>
+      </select>
+      <small class="text-danger" ng-show="studentForm.level.$invalid && !studentForm.level.$pristine" >Required.</small>
+    </div>
+  </div>
+
+   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Faculty</label>
+      <select id="inputState" ng-model="student.faculty" ng-change="update()" name="faculty" class="form-control form-control-sm">
+        <option value="" selected>Choose...</option>
+        <option ng-repeat="faculty in faculties" value="{{faculty._id}}">{{faculty.name}}</option>
+      </select>
+      <small class="text-danger" ng-show="studentForm.faculty.$invalid && !studentForm.faculty.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Department</label>
+      <select id="inputState" class="form-control form-control-sm" ng-model="student.department"  name="department">
+        <option value="" selected>Choose...</option>
+        <option ng-repeat="department in departments" value="{{department._id}}">{{department.name}}</option>
+      </select>
+      <small class="text-danger" ng-show="studentForm.department.$invalid && !studentForm.department.$pristine" >Required.</small>
+    </div>
+  </div>
+
+  <div class="control-group">
+  <div class="form-group floating-label-form-group controls">
+    <div class="file btn btn-info">
+        Upload Image
+        <input class="upload" type="file" ngf-select ng-model="student.file" name="file"  
+         accept="image/*" ngf-max-size="2MB"
+         ngf-model-invalid="errorFile" ngf-resize="{width: 200, height: 200, quality: 0.5, centerCrop: true, restoreExif: false}">
+    </div>
+    <img ngf-thumbnail="student.file" ngf-size="{width: 30, height: 30, quality: 0.9}">
+    <a href="" style="text-decoration: none" class="text-danger" ng-click="student.file = null" ng-show="student.file">x</a>
+  </div>
+   <p class="text-danger error" ng-show="studentForm.file.$error.maxSize">File too large 
+   {{errorFile.size / 1000000|number:1}}MB: max 2MB</p>
+</div>
+
+  <button type="submit" class="btn btn-primary">{{btn}}</button>
+</form>
+</div>
+
+
+
+   

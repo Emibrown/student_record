@@ -1,0 +1,147 @@
+<div studpageheader></div>
+<studmenu ></studmenu>
+<br>
+<div class="container">
+  <div class="row">
+  		<div class="col-md-12">
+				<h4>PROFILE</h4>
+				MATRIC NUMBER: {{student.regNo}}
+				<hr>
+				<form name="studentForm" ng-submit="add(studentForm.$valid)" required novalidate>
+
+						<div class="form-row">
+							<div class="form-group col-md-3">
+								<label for="inputEmail4">Surname</label>
+								<input type="text" class="form-control form-control-sm" ng-model="student.surname" name="surname" required disabled>
+								<small class="text-danger" ng-show="studentForm.surname.$invalid && !studentForm.surname.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-3">
+								<label for="inputPassword4">First Name</label>
+								<input type="text" class="form-control form-control-sm" ng-model="student.firstname" name="firstname" required disabled>
+								<small class="text-danger" ng-show="studentForm.firstname.$invalid && !studentForm.firstname.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-3">
+								<label for="inputPassword4">Other Name</label>
+								<input type="text" class="form-control form-control-sm" ng-model="student.othername" name="othername" required disabled>
+								<small class="text-danger" ng-show="studentForm.othername.$invalid && !studentForm.othername.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-3">
+								<label for="inputState">Gender</label>
+								<select id="inputState" class="form-control form-control-sm" ng-model="student.gender" name="gender" required disabled>
+									<option value="" selected>Choose...</option>
+									<option>Male</option>
+									<option>Female</option>
+								</select>
+								<small class="text-danger" ng-show="studentForm.gender.$invalid && !studentForm.gender.$pristine" >Required.</small>
+							</div>
+						</div>
+					
+						<div class="form-row">
+							<div class="form-group col-md-3">
+								<label for="inputEmail4">Date Of Birth</label>
+								<input type="text" class="form-control form-control-sm"  value="{{student.dateOfBirth | date :  'mediumDate'}}" name="dateOfBirth" required disabled>
+								<small class="text-danger" ng-show="studentForm.dateOfBirth.$invalid && !studentForm.dateOfBirth.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-3">
+								<label for="inputState">State Of Origin</label>
+								<select id="inputState" class="form-control form-control-sm" ng-model="student.stateOfOrigin" name="stateOfOrigin" required disabled>
+									<option value="" selected>Choose...</option>
+									<option>Cross River</option>
+								</select>
+								<small class="text-danger" ng-show="studentForm.stateOfOrigin.$invalid && !studentForm.stateOfOrigin.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-3">
+									<label for="inputEmail4">LGA</label>
+									<input type="text" class="form-control form-control-sm" ng-model="student.lga" name="lga" required disabled>
+									<small class="text-danger" ng-show="studentForm.lga.$invalid && !studentForm.lga.$pristine" >Required.</small>
+								</div>
+								<div class="form-group col-md-3">
+										<label for="inputEmail4">Address</label>
+										<input type="text" class="form-control form-control-sm" ng-model="student.address" name="address" required disabled>
+										<small class="text-danger" ng-show="studentForm.address.$invalid && !studentForm.address.$pristine" >Required.</small>
+									</div>
+						</div>
+					
+						<div class="form-row">
+							<div class="form-group col-md-3">
+								<label for="inputPassword4">Phone Number</label>
+								<input type="text" class="form-control form-control-sm" ng-model="student.phoneNumber" name="phoneNumber" required disabled>
+								<small class="text-danger" ng-show="studentForm.phoneNumber.$invalid && !studentForm.phoneNumber.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-3">
+								<label for="inputPassword4">Email Address</label>
+								<input type="email" class="form-control form-control-sm" ng-model="student.email" name="email" required disabled>
+								<small class="text-danger" ng-show="studentForm.email.$invalid && !studentForm.email.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-3">
+									<label for="inputEmail4">Matric Number</label>
+									<input type="text" class="form-control form-control-sm" ng-model="student.regNo" name="regNo" required disabled>
+									<small class="text-danger" ng-show="studentForm.regNo.$invalid && !studentForm.regNo.$pristine" >Required.
+									</small>
+								</div>
+								<div class="form-group col-md-3">
+										<label for="inputPassword4">Year Of Admission</label>
+										<input type="number" class="form-control form-control-sm" ng-model="student.yearOfAdmission" name="yearOfAdmission" required disabled>
+										<small class="text-danger" ng-show="studentForm.yearOfAdmission.$invalid && !studentForm.yearOfAdmission.$pristine" >Required.</small>
+									</div>
+						</div>
+					
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label for="inputPassword4">Level</label>
+								<input type="number" class="form-control form-control-sm" ng-model="student.level" name="yearOfAdmission" required disabled>
+								<small class="text-danger" ng-show="studentForm.level.$invalid && !studentForm.level.$pristine" >Required.</small>
+							</div>
+							<div class="form-group col-md-4">
+									<label for="inputEmail4">Faculty</label>
+									<input type="text" class="form-control form-control-sm" ng-model="student.faculty" name="faculty" required disabled>
+									<small class="text-danger" ng-show="studentForm.faculty.$invalid && !studentForm.faculty.$pristine" >Required.</small>
+								</div>
+								<div class="form-group col-md-4">
+									<label for="inputPassword4">Department</label>
+									<input type="text" class="form-control form-control-sm" ng-model="student.department" name="department" required disabled>
+									<small class="text-danger" ng-show="studentForm.department.$invalid && !studentForm.department.$pristine" >Required.</small>
+								</div>
+						</div>
+					</form>
+  		</div>
+	</div>
+</div>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+				<h4>Change Password</h4>
+				<hr>
+					<form name="passwordForm" ng-submit="change(passwordForm.$valid)" required novalidate>
+			
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label for="inputEmail4">Old Password</label>
+							<input type="password" class="form-control" name="password" ng-minlength="8"  ng-model="password.old" required/>
+								<small class="text-danger" ng-show="passwordForm.password.$error.required && !passwordForm.password.$pristine" >Your password is required.</small>
+								<small class="text-danger"  ng-show="passwordForm.password.$error.minlength" >8 characters or more.</small>
+						</div>
+			
+						<div class="form-group col-md-4">
+							<label for="inputEmail4">New Password</label>
+							<input class="form-control" type="password" name="password1" ng-minlength="8"  ng-model="password.new" required/>
+								<small class="text-danger" ng-show="passwordForm.password1.$error.required && !passwordForm.password1.$pristine" >Your new password is required.</small>
+								<small class="text-danger"  ng-show="passwordForm.password1.$error.minlength" >8 characters or more.</small>
+						</div>
+			
+						<div class="form-group col-md-4">
+							<label for="inputEmail4">Repeat new password</label>
+							<input class="form-control" type="password" name="password2"  ng-pattern="password.new"  ng-model="password.repeat" required/>
+								<small class="text-danger" ng-if="passwordForm.password2.$error.pattern" >Password miss-match!</small>
+						</div>
+			
+					</div>
+					<button type="submit" class="btn btn-primary">{{passBtn}}</button>
+				</form>
+		</div>
+  </div>
+</div> 
+
+<br>

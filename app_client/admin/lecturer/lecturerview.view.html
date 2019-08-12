@@ -1,0 +1,98 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+
+      <div class="container">
+			  <div class="row">
+			    <div class="col-md-12">
+				    <div class="student_view">
+				    	<div class="container">
+				    		<div class="row">
+				    			<div class="col-4 col-sm-2">
+				    				<img class="img-fluid  avatar" src="{{lecturer.Photourl}}">
+				    			</div>
+				    			<br>
+				    			<div class="col-sm-10 mid">
+				    				<h5>{{lecturer.title}}. {{lecturer.lastname}}, {{lecturer.firstname}} {{lecturer.othername}}</h5>
+				    				<h5 class="stud-info">{{lecturer.staffID}}</h5>
+				    			</div>
+				    		</div>
+				    		<br>
+				    		<div class="table-responsive">
+					        <table class="table click table-hover">
+					          <tbody>
+					            <tr>
+					              <td>
+						              <h6>Department:</h6>
+						             <h6 class="stud-info">{{lecturer.department}}</h6>
+						          </td>
+					             
+					              <td>
+						              <h6>Faculty:</h6>
+						              <h6 class="stud-info">{{lecturer.faculty}}</h6>
+						          </td>
+					              <td>
+					              	<h6>Staff ID:</h6>
+						              <h6 class="stud-info">{{lecturer.staffID}}</h6>
+					              </td>
+					            </tr>
+					            <tr>
+					              <td>
+													<h6>State Of Origin:</h6>
+						              <h6 class="stud-info">{{lecturer.stateOfOrigin}}</h6>
+						          </td>
+											<td>
+					              <h6>LGA:</h6>
+						             <h6 class="stud-info">{{lecturer.lga}}</h6>
+					              </td>
+					              <td>
+						              <h6>Gender:</h6>
+						             <h6 class="stud-info">{{lecturer.gender}}</h6>
+						          </td>
+					            </tr>
+					            <tr>
+					              <td>
+					              	<h6>Phone Number:</h6>
+						              <h6 class="stud-info">{{lecturer.phoneNumber}}</h6>
+					              </td>
+					             
+					              <td>
+													<h6>Email:</h6>
+						              <h6 class="stud-info" ng-if="lecturer.email == null">-</h6>
+						              <h6 class="stud-info" ng-if="lecturer.email != null">{{lecturer.email}}</h6>
+						          </td>
+					               <td>
+						              <h6>Address:</h6>
+						              <h6 class="stud-info">{{lecturer.address}}</h6>
+						          </td>
+					            </tr>   
+					          </tbody>
+					        </table>
+								</div>
+								<br>
+								<div class="row">
+										<div class="col-md-10">
+											<h5>COURSES</h5>
+										</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="table-responsive-md">
+											<table class="table click table-hover">
+												<tbody>
+												<tr ng-repeat ="course in courses">
+														<td>{{course.title}}</td>
+														<td>{{course.code}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div><!--end of .table-responsive-->
+								</div>
+				    	</div>
+				    </div>
+			    </div>
+			  </div>
+			</div> 
+            
+      

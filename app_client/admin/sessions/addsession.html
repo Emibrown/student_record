@@ -1,0 +1,45 @@
+<h5>Start New Session</h5>
+<br>
+
+<!--
+<form name="topicForm" ng-submit="add(topicForm.$valid)" required novalidate>
+
+    <div class="form-group ">
+       <input ng-click="clear()" name="title" class="form-control form-control-sm" ng-model="topic.title" placeholder="Topic" type="text" required>
+       <small class="text-danger" ng-show="submitted && topicForm.title.$error.required">Required.</small>
+    </div>
+    <hr>        
+    <div class="form-group">
+      <a href="" ng-click="add(topicForm.$valid)" class="btn  btn-primary">{{btn}}</a>
+    </div>
+</form>
+-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <p><strong>NOTE:</strong> Once you start a new session, student will not be able to register courses for the old session and all result will be Authomatically Approved.</p>
+    </div>
+  </div>
+</div>
+
+<form name="sessionForm" ng-submit="add(sessionForm.$valid)" required novalidate>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+        <label for="inputEmail4">Start Date</label>
+        <input type="date" class="form-control form-control-sm" ng-model="session.startDate" name="startDate" required>
+        <small class="text-danger" ng-show="sessionForm.startDate.$invalid && !sessionForm.startDate.$pristine" >Required.</small>
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-12">
+          <label for="inputEmail4">End Date</label>
+          <input type="date" class="form-control form-control-sm" ng-model="session.endDate" name="endDate" required>
+          <small class="text-danger" ng-show="sessionForm.endDate.$invalid && !sessionForm.endDate.$pristine" >Required.</small>
+        </div>
+    </div>
+  <button type="submit" class="btn btn-primary">{{btn}}</button>
+</form>
+
+
+
+   

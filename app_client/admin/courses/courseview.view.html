@@ -1,0 +1,84 @@
+<div pageheader></div>
+<div menu ></div>
+
+        	<div class="container">
+			  <div class="row">
+			    <div class="col-md-12">
+				    <div class="student_view">
+				    	<div class="container">
+				    		<div class="row">
+				    			<div class="col-sm-10">
+				    				<h5>{{course.title}}</h5>
+									</div>
+									<div class="col-sm-2">
+										<button class="btn btn-primary " ng-click="results(course._id)">Approve Results</button> 
+									</div>
+				    		</div>
+				    		<br>
+				    		<div class="table-responsive">
+					        <table class="table click table-hover">
+					          <tbody>
+					            <tr>
+					              <td>
+						              <h6>Course code:</h6>
+						             <h6 class="stud-info">{{course.code}}</h6>
+						          </td>
+					             
+					              <td>
+						              <h6>Credit Load:</h6>
+						              <h6 class="stud-info">{{course.creditLoad}}</h6>
+						          </td>
+					              <td>
+					              	<h6>Semister:</h6>
+						              <h6 class="stud-info">{{course.semister}}</h6>
+					              </td>
+					            </tr>
+					            <tr>
+					              <td>
+						              <h6>Level:</h6>
+						             <h6 class="stud-info">{{course.level}}</h6>
+						          </td>
+					             
+					              <td>
+						              <h6>Department:</h6>
+						             <h6 class="stud-info">{{course.department}}</h6>
+						          </td>
+					              <td>
+					              	<h6>Created On:</h6>
+						             <h6 class="stud-info">{{course.createdOn | date :  "mediumDate" }}</h6>
+					              </td>
+					            </tr>
+					          </tbody>
+					        </table>
+								</div>
+								<br>
+								<div class="row">
+										<div class="col-md-10">
+											<h5>Course Lectures</h5>
+										</div>
+										<div class="col-md-2">
+											<button class="btn btn-primary " ng-click="add()">Assigned Lectures</button> 
+										</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="table-responsive-md">
+											<table class="table click table-hover">
+												<tbody>
+												<tr ng-repeat ="lecturer in lecturers">
+														<td>{{lecturer.fullname}}</td>
+														<td>{{lecturer.staffID}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div><!--end of .table-responsive-->
+								</div>
+							</div>
+				    	</div>
+				    </div>
+			    </div>
+			  </div>
+			</div> 
+            
+      

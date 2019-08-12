@@ -1,0 +1,217 @@
+body{
+	background-color: white;
+	font-family: Nunito,sans-serif;
+	color: #263238;
+	font-size: 14px;
+}
+.bg{
+	background-color: #01579B;
+	background: url(../img/bg.jpg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+}
+h1,h2,h3,h4, h5{
+	margin: 0px;
+	padding: 0pc;
+}
+.active{
+	background-color: #01579B;
+	color: white!important;
+}
+.table tr td{
+	text-transform: capitalize!important;
+}
+button{
+	cursor: pointer;
+}
+.login{
+	background-color: rgba(21,101,192,0.8);
+	padding: 40px 30px 30px 30px;
+	margin: 20px;
+	border-radius: 10px;
+}
+.login p{
+	color: white;
+}
+.subject{
+	background-color: #1565C0;
+	margin:  5px;
+	border-radius: 10px;
+	padding: 10px 5px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.subject p{
+	margin-top: 10px;
+	color: #fff;
+}
+.subject img{
+	margin-right: auto;
+	margin-left: auto;
+}
+.topic{
+	background-color: #1565C0;
+	padding: 15px 3%;
+	margin:  5px;
+	color: rgba(255,255,255,.7);
+}
+.lesson{
+	background-color: #1565C0;
+	margin:  5px;
+	padding: 15px 3%;
+}
+.lesson h6{
+	color: rgba(255,255,255,.7);
+}
+.lesson p{
+	padding: 0px;
+	margin: 0px;
+	color: rgba(255,255,255,.7);
+	font-size: 14px;
+}
+.conversation{
+	background-color: #1565C0;;
+	padding: 15px 3%;
+	margin:  5px;
+}
+.conversation h4{
+	color: rgba(255,255,255,.7);
+}
+.conversation p{
+	padding: 0px;
+	margin: 0px;
+	color: rgba(255,255,255,.7);
+	font-size: 14px;
+}
+.login-logo{
+	text-align: center;
+	color: white;
+	margin: 30px 0px;
+}
+.login-logo h3{
+	text-shadow: 1px 1px 1px #000;
+}
+.login-footer, .login-footer a{
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+}
+.tool{
+	background-color:  #0277BD;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+.tool ul{
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+	margin: 0px;
+}
+.tool ul li{
+	padding: 0px 10px;
+}
+.file {
+  position: relative;
+  overflow: hidden;
+}
+.login label{
+	color: white;
+}
+.login input,  .login .form-control{
+	border: none!important;
+}
+.login .btn-primary{
+	background-color: #283593!important;
+	border-color: #283593!important;
+}
+input[type="file"]{
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.dialog{
+	padding: 0px 10px;
+	margin-bottom: 20px;
+	max-height:400px; 
+	overflow-y : scroll;
+	overflow-x : hidden;
+}
+
+
+
+.simpleDemo div[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+.simpleDemo div[dnd-list] .dndPlaceholder {
+    background-color: #ddd;
+    display: block;
+    min-height: 40px;
+}
+
+/**
+ * Show selected elements in green
+ */
+.simpleDemo div[dnd-list] div.selected {
+   
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  color: rgba(255, 255, 255, .75);
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-underline .nav-link {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+  color: #6c757d;
+}
+
+.nav-underline .nav-link:hover {
+  color: #007bff;
+}
+
+.nav-underline .active {
+  font-weight: 500;
+  color: #343a40;
+}
+
+.student_view{
+  	padding: 20px;
+}
+.avatar{
+	border-radius: 50%;
+}
+.stud-info{
+	color: #9E9E9E;
+}
+.mid{
+	padding-top:  50px;
+}

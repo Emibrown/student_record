@@ -1,0 +1,80 @@
+<h5>Add New Course</h5>
+<br>
+
+<!--
+<form name="topicForm" ng-submit="add(topicForm.$valid)" required novalidate>
+
+    <div class="form-group ">
+       <input ng-click="clear()" name="title" class="form-control form-control-sm" ng-model="topic.title" placeholder="Topic" type="text" required>
+       <small class="text-danger" ng-show="submitted && topicForm.title.$error.required">Required.</small>
+    </div>
+    <hr>        
+    <div class="form-group">
+      <a href="" ng-click="add(topicForm.$valid)" class="btn  btn-primary">{{btn}}</a>
+    </div>
+</form>
+-->
+<form name="courseForm" ng-submit="add(courseForm.$valid)" required novalidate>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Title</label>
+       <input type="text" class="form-control form-control-sm" ng-model="course.title" name="title" required>
+       <small class="text-danger" ng-show="courseForm.title.$invalid && !courseForm.title.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Code</label>
+      <input type="text" class="form-control form-control-sm" ng-model="course.code" name="code" required>
+      <small class="text-danger" ng-show="courseForm.code.$invalid && !courseForm.code.$pristine" >Required.</small>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Credit Load</label>
+      <input type="number" class="form-control form-control-sm" ng-model="course.creditLoad" name="creditLoad" required>
+      <small class="text-danger" ng-show="courseForm.creditLoad.$invalid && !courseForm.creditLoad.$pristine" >Required.</small>
+    </div>
+    <div class="form-group col-md-6">
+     <label for="inputPassword4">Department</label>
+      <select id="inputState" class="form-control form-control-sm" ng-model="course.department"  name="department">
+        <option value="" selected>Choose...</option>
+        <option ng-repeat="department in departments" value="{{department._id}}">{{department.name}}</option>
+      </select>
+      <small class="text-danger" ng-show="courseForm.department.$invalid && !courseForm.department.$pristine" >Required.</small>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Semister</label>
+      <select id="inputState" class="form-control form-control-sm" ng-model="course.semister" name="semister" required>
+        <option value="" selected>Choose...</option>
+        <option>First</option>
+        <option>Second</option>
+      </select>
+      <small class="text-danger" ng-show="courseForm.semister.$invalid && !courseForm.semister.$pristine" >Required.</small>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Level</label>
+      <select id="inputState" class="form-control form-control-sm" ng-model="course.level" name="level" required>
+        <option value="" selected>Choose...</option>
+        <option>100</option>
+        <option>200</option>
+        <option>300</option>
+        <option>400</option>
+        <option>500</option>
+      </select>
+      <small class="text-danger" ng-show="courseForm.level.$invalid && !courseForm.level.$pristine" >Required.</small>
+    </div>
+
+  </div>
+
+
+
+  <button type="submit" class="btn btn-primary">{{btn}}</button>
+</form>
+
+
+
+   

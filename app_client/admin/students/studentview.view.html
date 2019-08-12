@@ -1,0 +1,94 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+
+        	<div class="container">
+			  <div class="row">
+			    <div class="col-md-12">
+				    <div class="student_view">
+				    	<div class="container">
+				    		<div class="row">
+				    			<div class="col-4 col-sm-2">
+				    				<img class="img-fluid  avatar" src="{{student.photourl}}">
+				    			</div>
+				    			<br>
+				    			<div class="col-sm-10 mid">
+				    				<h5>{{student.surname}}, {{student.firstname}} {{student.othername}}</h5>
+				    				<h5 class="stud-info">{{student.regNo}}</h5>
+				    			</div>
+				    		</div>
+				    		<br>
+				    		<div class="table-responsive">
+					        <table class="table click table-hover">
+					          <tbody>
+					            <tr>
+					              <td>
+						              <h6>Department:</h6>
+						             <h6 class="stud-info">{{student.department}}</h6>
+						          </td>
+					             
+					              <td>
+						              <h6>Faculty:</h6>
+						              <h6 class="stud-info">{{student.faculty}}</h6>
+						          </td>
+					              <td>
+					              	<h6>Year Of Admission:</h6>
+						              <h6 class="stud-info">{{student.yearOfAdmission}}</h6>
+					              </td>
+					            </tr>
+					            <tr>
+					              <td>
+						              <h6>Level:</h6>
+						             <h6 class="stud-info">{{student.level}}</h6>
+						          </td>
+					             
+					              <td>
+						              <h6>Gender:</h6>
+						             <h6 class="stud-info">{{student.gender}}</h6>
+						          </td>
+					              <td>
+					              	<h6>Programme duration:</h6>
+						             <h6 class="stud-info">{{student.duration}}Years</h6>
+					              </td>
+					            </tr>
+					            <tr>
+					              <td>
+					              	<h6>State Of Origin:</h6>
+						              <h6 class="stud-info">{{student.stateOfOrigin}}</h6>
+					              </td>
+					             
+					              <td>
+						              <h6>LGA:</h6>
+						              <h6 class="stud-info">{{student.lga}}</h6>
+						          </td>
+					               <td>
+						              <h6>Address:</h6>
+						              <h6 class="stud-info">{{student.address}}</h6>
+						          </td>
+					            </tr>
+					            <tr>
+					              <td>
+					              	<h6>Phone Number:</h6>
+						              <h6 class="stud-info">{{student.phoneNumber}}</h6>
+					              </td>
+					              <td>
+						              <h6>Email:</h6>
+						              <h6 class="stud-info" ng-if="student.email == null">-</h6>
+						              <h6 class="stud-info" ng-if="student.email != null">{{student.email}}</h6>
+						          </td>
+					               <td>
+						              <h6>Date of Birth:</h6>
+						             <h6 class="stud-info">{{student.dateOfBirth | date :  "mediumDate"}}</h6>
+						          </td>
+					            </tr>
+					             
+					          </tbody>
+					        </table>
+					      </div>
+				    	</div>
+				    </div>
+			    </div>
+			  </div>
+			</div> 
+            
+      

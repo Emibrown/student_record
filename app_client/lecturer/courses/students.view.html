@@ -1,0 +1,69 @@
+<div lecpageheader></div>
+<div lecmenu ></div>
+<br>
+<div class="container">
+  <div class="row">
+  		<div class="col-md-12">
+				<h6>STUDENT FOR {{course.title}} ({{course.code}}) {{selectedSession}} Session</h6>
+				<hr>
+  		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+			<div class="col-md-12">
+				<h6>Select Session</h6>
+			</div>
+			<div class="col-md-12">
+				<form  ng-submit="change()">
+					<div class="form-row">
+					  <div class="form-group col-md-4">
+						<select id="inputState" class="form-control form-control-sm" name="session" ng-model="value.session" required>
+							<option ng-repeat="session in allsessions" value="{{session._id}}">{{currentSession(session._id)}} {{session.title}}</option>
+						</select>
+					  </div>
+				  
+					  <div class="form-group col-md-8">
+						<button type="submit" class="btn btn-sm btn-primary">Change</button>
+					  </div>
+				  
+					</div>
+				  </form>
+			</div>
+	  </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+			<div class="table-responsive-md">
+				<table class="table click table-hover">
+					<thead>
+						<tr>
+							<th>Full Name</th>
+							<th>Matric Number</th>
+							<th>Assessment</th>
+							<th>Exam</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+					 <tr  ng-repeat ="student in students ">
+							<td>{{student.student.fullname}}</td>
+							<td>{{student.student.regNo}}</td>
+							<td>{{  student.courses[0].assessment || 'Null'}}</td>
+							<td>{{  student.courses[0].exam || 'Null'}}</td>
+							<td>
+								<h6><span class="badge {{check(student.courses[0].status)}}" ng-class="">{{  student.courses[0].status}}</span></h6>
+							</td>
+							<td>
+								<a href="" ng-click="set(student.student.regNo,student.courses[0].assessment,student.courses[0].exam,student._id)" class="btn btn-sm btn-success">Set Score</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--end of .table-responsive-->
+		</div>
+  </div>
+</div> 

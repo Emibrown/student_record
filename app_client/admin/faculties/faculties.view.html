@@ -1,0 +1,41 @@
+<div pageheader></div>
+<div menu ></div>
+<br>
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h6>All Faculties</h6>
+  		</div>
+	    <div class="col-md-10">
+	    	<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="Search faculties record" ng-model="faculties">
+			</div>
+	    </div>
+	    <div class="col-md-2">
+	    	<button class="btn btn-primary" ng-click="add()">Add Faculty</button> 
+	    </div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    	<div class="table-responsive-md">
+	        <table class="table click table-hover">
+	          <thead>
+	            <tr>
+	              <th>Name</th>
+	              <th>Created on</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	           <tr ng-repeat ="faculty in allfaculties | filter
+: faculties">
+	          		<td>{{faculty.name}}</td>
+	          		<td>{{faculty.createdOn | date :  "mediumDate"}}</td>
+	          	</tr>
+	          </tbody>
+	        </table>
+	      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div> 
